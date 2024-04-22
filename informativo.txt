@@ -1,0 +1,6 @@
+Serializers faz a "conversão" do models x json
+
+Autenticação JWT = Json Web Token
+JWT método POST, preenchendo body raw com username e senha para pegar o bearer Token
+
+DRF > Settings > Model > Admin > Views > Serializers > Urls > JWT > Settings
