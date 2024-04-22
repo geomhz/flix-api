@@ -6,15 +6,18 @@ from movies.serializers import MovieSerializer
 from app.permissions import GlobalDefaultPermission
 from reviews.models import Review
 
+
 class MovieCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
+
 class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+
 
 class MovieStatusView(views.APIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
@@ -32,6 +35,6 @@ class MovieStatusView(views.APIView):
                 'movies_by_genre': movies_by_genre,
                 'total_reviews': total_reviews,
                 'avarage_stars': round(avarage_stars, 1) if avarage_stars else 0,
-                },
+            },
             status=status.HTTP_200_OK,
         )
