@@ -3,8 +3,6 @@ from rest_framework import serializers
 from genres.serializers import GenreSerializer
 from actors.serializers import ActorSerializer
 from movies.models import Movie
-from genres.models import Genre
-from actors.models import Actor
 
 
 class MovieSerializer(serializers.ModelSerializer):
@@ -22,6 +20,7 @@ class MovieSerializer(serializers.ModelSerializer):
         if len(value) > 500:
             raise serializers.ValidationError("Resumo não deve ser maior que 200 caracteres.")
         return value
+
 
 class MovieListDetailSerializer(serializers.ModelSerializer):
     actors = ActorSerializer(many=True)

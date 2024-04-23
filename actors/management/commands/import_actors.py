@@ -3,6 +3,7 @@ from django.core.management.base import BaseCommand
 from datetime import datetime
 from actors.models import Actor
 
+
 class Command(BaseCommand):
 
     def add_arguments(self, parser):
@@ -19,13 +20,13 @@ class Command(BaseCommand):
             reader = csv.DictReader(file)
             for row in reader:
                 name = row['name']
-                birthday = datetime.strptime(row['birthday'], '%Y-%m-%d').date()                
+                birthday = datetime.strptime(row['birthday'], '%Y-%m-%d').date()
                 nationality = row['nationality']
 
                 self.stdout.write(self.style.NOTICE(f'Importing actor: {name}'))
 
                 Actor.objects.create(
-                    name=name, 
+                    name=name,
                     birthday=birthday,
                     nationality=nationality
                 )
