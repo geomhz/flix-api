@@ -35,7 +35,7 @@ python manage.py migrate
 
 ## Create the superuser
 
-After installing the dependencies, apply the migrations to the database with the command:
+Create the superuser to obtain the access token for making requests.
 ```bash
 python manage.py createsuperuser
 ```
