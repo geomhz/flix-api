@@ -25,19 +25,29 @@ pip install -r requirements.txt
 ```
 
 
-## Run the project
+## Execute the migrate
 
 After installing the dependencies, apply the migrations to the database with the command:
 ```bash
 python manage.py migrate
 ```
 
+
+## Create the superuser
+
+After installing the dependencies, apply the migrations to the database with the command:
+```bash
+python manage.py createsuperuser
+```
+
+## Run the server
+
 Now the project can be initialized with the command:
 ```bash
 python manage.py runserver
 ```
 
-After this, the system will be ready to be accessed at:
+After this, the system will be ready to be accessed at (remember to use superuser username and password):
 [http://localhost:8000/api/v1/authentication/token/](http://localhost:8000/api/v1/authentication/token/)
 
 "Note: It is highly recommended to use Postman to fetch the access token."
